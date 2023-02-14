@@ -1,0 +1,17 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+
+        <Company>FonRadar A.Ş.</Company>
+        <ProductName>FonRadar.Base.EventBus</ProductName>
+    
+        <Product>$(ProductName)</Product>
+        <Authors><![CDATA[Fon Radar A.Ş. <info@fonradar.com>]]></Authors>
+        
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>11</LangVersion>
+    
+    </PropertyGroup>
+
+</Project>
