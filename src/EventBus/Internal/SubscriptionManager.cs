@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EventBus.Exceptions;
+using FonRadar.Base.EventBus.Exceptions;
 using Microsoft.Extensions.Logging;
 
-namespace EventBus.Internal;
+namespace FonRadar.Base.EventBus.Internal;
 
 /// <summary>
 /// 
 /// </summary>
-internal class SubscriptionManager : ISubscriptionManager
+public class SubscriptionManager : ISubscriptionManager
 {
     private readonly ILogger<SubscriptionManager> _logger;
     private readonly SortedDictionary<string, List<Type>> _eventHandlerStorage;
@@ -39,7 +39,7 @@ internal class SubscriptionManager : ISubscriptionManager
     /// </exception>
     public void Subscribe<TEventType, TEventHandlerType>()
         where TEventType : IEvent
-        where TEventHandlerType : IEventHandler<TEventType>
+        where TEventHandlerType : class, IEventHandler<TEventType>
     {
         string eventName = this.GetEventName<TEventType>();
         if (!this.HasEvent<TEventType>())
@@ -64,7 +64,7 @@ internal class SubscriptionManager : ISubscriptionManager
     /// <typeparam name="TEventHandlerType"></typeparam>
     public void Unsubscribe<TEventType, TEventHandlerType>()
         where TEventType : IEvent
-        where TEventHandlerType : IEventHandler<TEventType>
+        where TEventHandlerType : class, IEventHandler<TEventType>
     {
         string eventName = this.GetEventName<TEventType>();
         if (this.HasEvent<TEventType>() && this.HasSameEventHandler<TEventType, TEventHandlerType>())
@@ -102,7 +102,7 @@ internal class SubscriptionManager : ISubscriptionManager
     /// <returns></returns>
     private bool HasSameEventHandler<TEventType, TEventHandlerType>()
         where TEventType : IEvent
-        where TEventHandlerType : IEventHandler<TEventType>
+        where TEventHandlerType : class, IEventHandler<TEventType>
     {
         string eventName = this.GetEventName<TEventType>();
         bool hasSameHandler = this._eventHandlerStorage[eventName].Contains(typeof(TEventHandlerType));

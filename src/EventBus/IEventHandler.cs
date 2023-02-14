@@ -1,10 +1,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EventBus;
+namespace FonRadar.Base.EventBus;
 
 /// <summary>
-/// 
+/// Provides a skeleton for handler classes.
 /// </summary>
 /// <typeparam name="TEventType"></typeparam>
 public interface IEventHandler<in TEventType>

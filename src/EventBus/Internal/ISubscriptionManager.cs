@@ -1,9 +1,9 @@
-namespace EventBus.Internal;
+namespace FonRadar.Base.EventBus.Internal;
 
 /// <summary>
 /// 
 /// </summary>
-internal interface ISubscriptionManager
+public interface ISubscriptionManager
 {
     /// <summary>
     /// It returns 
@@ -17,7 +17,7 @@ internal interface ISubscriptionManager
     /// <typeparam name="TEventHandlerType"></typeparam>
     void Subscribe<TEventType, TEventHandlerType>()
         where TEventType : IEvent
-        where TEventHandlerType : IEventHandler<TEventType>
+        where TEventHandlerType : class, IEventHandler<TEventType>
     ;
 
     /// <summary>
@@ -27,7 +27,7 @@ internal interface ISubscriptionManager
     /// <typeparam name="TEventHandlerType"></typeparam>
     void Unsubscribe<TEventType, TEventHandlerType>()
         where TEventType : IEvent
-        where TEventHandlerType : IEventHandler<TEventType>
+        where TEventHandlerType : class, IEventHandler<TEventType>
     ;
 
     /// <summary>

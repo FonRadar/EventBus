@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace EventBus;
+namespace FonRadar.Base.EventBus;
 
 /// <summary>
 /// Concrete event base

@@ -1,6 +1,6 @@
 using System;
 
-namespace EventBus;
+namespace FonRadar.Base.EventBus;
 
 /// <summary>
 /// Basic structure of an event.

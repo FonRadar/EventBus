@@ -1,6 +1,6 @@
 using System;
 
-namespace EventBus.Exceptions;
+namespace FonRadar.Base.EventBus.Exceptions;
 
 /// <summary>
 /// 
