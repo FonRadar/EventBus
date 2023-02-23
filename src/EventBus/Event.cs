@@ -23,9 +23,9 @@ public abstract record Event : IEvent
     /// </summary>
     protected Event()
     {
+        this.Date = DateTime.Now;
         byte[] bytes = Encoding.UTF8.GetBytes(this.Date.Ticks.ToString().Substring(0, 16));
         this.Id = new Guid(bytes);
-        this.Date = DateTime.Now;
     }
 
     /// <summary>
