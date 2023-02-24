@@ -6,9 +6,9 @@
         <ProductName>FonRadar.Base.EventBus</ProductName>
         <Authors><![CDATA[Fon Radar A.Ş. <info@fonradar.com>]]></Authors>
         
+        <Version>1.0.5-beta</Version>
+    
         <Product>$(ProductName)</Product>
-        <Version>1.0.4-beta</Version>
-        
         <AssemblyName>$(ProductName)</AssemblyName>
         <RootNamespace>$(ProductName)</RootNamespace>
         
