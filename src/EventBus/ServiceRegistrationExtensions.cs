@@ -15,7 +15,7 @@ public static class ServiceRegistrationExtensions
     /// <returns></returns>
     public static IEventBusServiceRegistration AddEventBus(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddScoped<ISubscriptionManager, SubscriptionManager>();
+        serviceCollection.AddTransient<ISubscriptionManager, SubscriptionManager>();
         return new EventBusServiceRegistration(serviceCollection);
     }
 }
