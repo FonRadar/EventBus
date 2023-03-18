@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat code coverage">
+        <Configuration>
+          <Format>opencover</Format>
+          <ExcludeByFile>**/Test/**/*.cs</ExcludeByFile>
+          <ExcludeByFile>**/*Test*.cs</ExcludeByFile>
+          <ExcludeByFile>**/*Tests.cs</ExcludeByFile>
+          <ExcludeByFile>**/*.Test.cs</ExcludeByFile>
+          <ExcludeByFile>**/*.Tests.cs</ExcludeByFile>
+          <ExcludeByFile>**/*Test/*</ExcludeByFile>
+          <ExcludeByAttribute>System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute</ExcludeByAttribute>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

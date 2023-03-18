@@ -22,10 +22,10 @@ jobs:
         run: dotnet build --configuration Release
       
       - name: Run all tests
-        run: dotnet test --configuration Release --no-restore --no-build --verbosity normal
+        run: dotnet test /p:CollectCoverage=true --configuration Release --no-restore --no-build --verbosity normal
         
       - name: Check test results
-        run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage" --settings coverlet.runsettings
+        run: dotnet test /p:CollectCoverage=true --configuration Release --no-restore --no-build --verbosity normal --collect:"XPlat Code Coverage" --settings coverlet.runsettings
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
