@@ -9,7 +9,7 @@ on:
 jobs:
   
   build-and-test:
-    name: Checkout the latest code, build it and test it
+    name: Restore, Build, Test
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout 
@@ -28,4 +28,10 @@ jobs:
         run: dotnet test /p:CollectCoverage=true --configuration Release --no-restore --no-build --verbosity normal --collect:"XPlat Code Coverage" --settings coverlet.runsettings
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload assets
+        uses: actions/upload-artifact@v2
+        with:
+          name: release
+          path: bin/Release
   
